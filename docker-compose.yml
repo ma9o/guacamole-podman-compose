@@ -150,9 +150,9 @@ services:
     restart: always
     image: docker.io/nginx
     volumes:
-      - ./nginx/templates:/etc/nginx/templates:ro
-      - ./nginx/ssl/self.cert:/etc/nginx/ssl/self.cert:ro
-      - ./nginx/ssl/self-ssl.key:/etc/nginx/ssl/self-ssl.key:ro
+      - ./nginx/templates:/etc/nginx/templates:z
+      - ./nginx/ssl/self.cert:/etc/nginx/ssl/self.cert:z
+      - ./nginx/ssl/self-ssl.key:/etc/nginx/ssl/self-ssl.key:z
     ports:
       - 8443:443
     links:
