@@ -159,4 +159,17 @@ services:
       - guacamole
     networks:
       guacnetwork_compose:
-####################################################################################
+  # RDP server on XFCE Alpine
+  rdesktop:
+    image: lscr.io/linuxserver/rdesktop:latest
+    container_name: rdesktop
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    ports:
+      - 3389:3389
+    shm_size: "1gb" #optional
+    restart: unless-stopped
+    networks:
+      guacnetwork_compose:
